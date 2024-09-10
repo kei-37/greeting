@@ -19,27 +19,23 @@ Route::get('/', function () {
 });
 
 Route::get('/comments/morning', function () {
-    return '<h1>朝のあいさつ</h1>
-    <h2>おはようございます</h2>';
+    return view('message.morning');
 });
 
 Route::get('/comments/afternoon', function () {
-    return '<h1>昼のあいさつ</h1>
-    <h2>こんにちは</h2>';
+    return view('message.afternoon');
 });
 
 Route::get('/comments/evening', function () {
-    return '<h1>夕方のあいさつ</h1>
-    <h2>こんばんは</h2>';
+    return view('message.evening');
 });
 
 Route::get('/comments/night', function () {
-    return '<h1>夜のあいさつ</h1>
-    <h2>おやすみ</h2>';
+    return view('message.night');
 });
 
 Route::get('/comments/freeword/{msg}', function ($msg) {
-    return view('message.word', ['msg' => $msg]);
+    return view('message.freeword', ['msg' => $msg]);
 });
 
 Route::get('/comments/random', [MessageController::class, 'random']);
