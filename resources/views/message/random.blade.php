@@ -7,8 +7,8 @@
 </head>
 
 <body>
-    <h1>自由なメッセージ</h1>
-    <h2>{{ $msg }}</h2>
+    <h1>ランダムなメッセージ</h1>
+    <h2>{{ $randomMessage }}</h2>
 </body>
 
 </html>

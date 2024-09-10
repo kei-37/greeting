@@ -42,18 +42,4 @@ Route::get('/comments/freeword/{msg}', function ($msg) {
     return view('message.word', ['msg' => $msg]);
 });
 
-Route::get('/comments/random', function () {
-    // 表示するメッセージを配列に格納
-    $messages = [
-        '<h1>ランダムなメッセージ</h1><h2>おはよう</h2>',
-        '<h1>ランダムなメッセージ</h1><h2>こんにちは</h2>',
-        '<h1>ランダムなメッセージ</h1><h2>こんばんは</h2>',
-        '<h1>ランダムなメッセージ</h1><h2>おやすみ</h2>'
-    ];
-
-    // 配列からランダムに1つ選択
-    $randomMessage = $messages[array_rand($messages)];
-
-    // 選ばれたメッセージを返す
-    return $randomMessage;
-});
+Route::get('/comments/random', [MessageController::class, 'random']);
